@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+    <h1>STEP2-loops-퀴즈</h1>
+    <h2>1.반복문을 이용하여 위에 주어진 문자열을 역순으로 출력하는 코드를 작성해보세요.</h2>
+    원문 : ken <br>
+    <h3>
+      <script>
+        var ken = ['k','e','n']
+        ken.reverse();
+        for (let i = 0; i < ken.length; i++){
+          document.write(ken[i])
+        }
+      </script>
+    </h3>
+
+    <h2>2. 반복문을 이용하여 위에 주어진 문자열의 홀수번째 글자만 출력하는 코드를 작성해보세요.</h2>
+    원문 : 0i1a2m3k4e5n<br>
+    <h3>
+      <script>
+      var longText = ['0','i','1','a','2','m','3','k','4','e','5','n'];
+      var i = 0;
+      while (i < longText.length) {
+        document.write(longText[i]);
+        var i = i + 2;
+      };
+      </script>
+    </h3>
+  </body>
+</html>
+
+
+<!--var name = "ken";
+
+// 역순으로 한 글자씩 출력하는 반복문을 작성해보세요.
+//반복문을 이용하여 위에 주어진 문자열을 역순으로 출력하는 코드를 작성해보세요.
+
+var longText = "0i1a2m3k4e5n";
+
+//홀수번째 글자만 출력하는 코드를 작성해보세요.
+//반복문을 이용하여 위에 주어진 문자열의 홀수번째 글자만 출력하는 코드를 작성해보세요.-->
