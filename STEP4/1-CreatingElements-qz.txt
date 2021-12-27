@@ -1,0 +1,37 @@
+// 두 가지 예제 코드의 차이점을 분별해보세요.
+// #1
+⑴| const something = document.createElement("p");
+⑵| 
+⑶| for (let i = 0; i < 5; i++) {
+⑷|   something.textContent = i;
+⑸|   document.body.appendChild(something);
+⑹| }
+----------------------------------------------------------------------------------
+❶ Line 1은 P를 요소로 가진 something 생성
+❷ Line 3~6은 반복문
+❸ 반복문 속 Line4는 something에 i를 내용으로 하는 텍스트 추가
+❹ 반복문 속 Line5는 something을 부모인 body에 마지막 자식으로 추가
+❺ 결과는 body 가장 마지막에 1개의 <p>4</P> 추가
+----------------------------------------------------------------------------------
+// #2
+⑴| for (let i = 0; i < 5; i++) {
+⑵|   const something = document.createElement("p");
+⑶|   something.textContent = i;
+⑷|   document.body.appendChild(something);
+⑸| }
+----------------------------------------------------------------------------------
+❶ Line 1~5는 반복문
+❷ 반복문 속 Line 2는 P를 요소로 가진 something 생성
+❸ 반복문 속 Line 반복문 속 Line4는 something에 i를 내용으로 하는 텍스트 추가
+❹ 반복문 속 Line Line5는 something을 부모인 body에 마지막 자식으로 추가
+❺ 결과는 body 가장 마지막에 5개의 자식 요소 추가. <P>0</P>, <P>1</P>, <P>2</P>, <P>3</P>, <P>4</P> 순서
+
+===================================================
+
+// 차이점
+① 반복문 for문 안에 P를 요소로 가진 something 생성하면 반복하는 횟수만큼 추가된다.
+※ #1은 for문 밖에 있기 때문에 1개만 생성
+
+② #1의 내용이 0,1,2,3,4가 아닌 이유
+추가하는 동작이 아닌 수정하는 동작으로 되어있기 때문에 가장 마지막의 i의 값만 남게 된다.
+ 
